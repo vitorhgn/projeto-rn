@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { associacoes } from '../../data';  // Importando o arquivo de dados
+import { associacoes } from '../../data';
 
 export default function HomeScreen({ navigation }) {
   const [busca, setBusca] = useState('');

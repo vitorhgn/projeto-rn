@@ -1,5 +1,3 @@
-// data.js
-
 export const associacoes = [
     {
       id: '1',
