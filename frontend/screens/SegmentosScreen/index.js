@@ -1,25 +1,18 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 
-const segmentos = [
-  { id: '1', nome: 'Saúde' },
-  { id: '2', nome: 'Educação' },
-  { id: '3', nome: 'Tecnologia' },
-  { id: '4', nome: 'Comércio' },
-];
-
 export default function SegmentosScreen({ route, navigation }) {
   const { associacao } = route.params;
 
   const handleSegmentoPress = (segmento) => {
-    navigation.navigate('Empresas', { segmento });
+    navigation.navigate('Parceiros', { segmento });
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Segmentos da {associacao.nome}</Text>
       <FlatList
-        data={segmentos}
+        data={associacao.segmentos}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity

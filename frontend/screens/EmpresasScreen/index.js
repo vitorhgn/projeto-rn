@@ -1,35 +1,14 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-
-const empresasPorSegmento = {
-  Saúde: [
-    { id: '1', nome: 'Clínica Boa Saúde', desconto: '10%' },
-    { id: '2', nome: 'Farmácia Popular', desconto: '15%' },
-  ],
-  Educação: [
-    { id: '3', nome: 'Escola Saber', desconto: '20%' },
-    { id: '4', nome: 'Libraria Cultura', desconto: '5%' },
-  ],
-  Tecnologia: [
-    { id: '5', nome: 'Loja Tech', desconto: '8%' },
-    { id: '6', nome: 'Curso Online Dev', desconto: '12%' },
-  ],
-  Comércio: [
-    { id: '7', nome: 'Supermercado Local', desconto: '10%' },
-    { id: '8', nome: 'Loja de Roupas', desconto: '15%' },
-  ],
-};
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 
 export default function EmpresasScreen({ route }) {
   const { segmento } = route.params;
-
-  const empresas = empresasPorSegmento[segmento.nome] || [];
 
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Empresas no segmento: {segmento.nome}</Text>
       <FlatList
-        data={empresas}
+        data={segmento.empresas}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.item}>
@@ -66,16 +45,14 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontSize: 16,
-    fontWeight: 'bold',
   },
   desconto: {
     fontSize: 14,
-    color: '#555',
+    color: '#888',
   },
   semEmpresas: {
-    textAlign: 'center',
     fontSize: 16,
-    marginTop: 20,
-    color: '#999',
+    color: '#888',
+    textAlign: 'center',
   },
 });

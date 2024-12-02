@@ -1,5 +1,3 @@
-// App.js
-
 import 'react-native-gesture-handler'; // Deve ser importado no topo
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import SegmentosScreen from './screens/SegmentosScreen';
 import EmpresasScreen from './screens/EmpresasScreen';
+import { associacoes } from './data';  // Importando o arquivo de dados
 
 const Stack = createStackNavigator();
 
@@ -26,9 +25,9 @@ export default function App() {
           options={{ title: 'Segmentos' }}
         />
         <Stack.Screen
-          name="Empresas"
+          name="Parceiros"
           component={EmpresasScreen}
-          options={{ title: 'Empresas Parceiras' }}
+          options={{ title: 'Parceiros' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

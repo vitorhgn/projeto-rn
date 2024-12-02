@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
-
-const associacoes = [
-  { id: '1', nome: 'Associação Parceira 1' },
-  { id: '2', nome: 'Associação Parceira 2' },
-  { id: '3', nome: 'Associação Parceira 3' },
-  { id: '4', nome: 'Associação Parceira 4' },
-];
+import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { associacoes } from '../../data';  // Importando o arquivo de dados
 
 export default function HomeScreen({ navigation }) {
   const [busca, setBusca] = useState('');
